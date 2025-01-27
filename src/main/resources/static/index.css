@@ -1,0 +1,38 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    max-width: 992px;
+    margin: 0 auto;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    margin-right: 40px;
+    list-style: none;
+}
+
+.nav-menu-link {
+    font-size: 18px;
+    margin: 0 18px;
+    line-height: 90px;
+    width: max-content;
+    padding: 8px 12px;
+    border-radius: 10px;
+}
+
+.nav-menu-link:hover {
+    background-color: #024070;
+    transition: 0.5s;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0 40px;
+    line-height: 90px;
+}
