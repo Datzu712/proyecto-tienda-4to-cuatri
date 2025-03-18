@@ -20,4 +20,9 @@ public interface ProductoDao extends JpaRepository<Producto, Long> {
 
     @Query(value = "SELECT a FROM Producto a where a.descripcion LIKE %:nombre% ORDER BY a.descripcion ASC")
     public List<Producto> findByNombreContainingIgnoreCaseOrderByDescripcion(@Param("nombre") String nombre);
+
+    //Buscar productos por descripción que contenga el texto (ignorando mayúsculas/minúsculas)
+    public List<Producto> findByDescripcionContainingIgnoreCase(String textoDescripcion);
+
+
 }

@@ -33,10 +33,12 @@ public class ProductoServiceImpl implements ProductoService {
     public void save(Producto categoria) {
         serviceDao.save(categoria);
     }
+
     @Transactional
     public void delete(Producto categoria) {
         serviceDao.delete(categoria);
     }
+
     @Transactional(readOnly = true)
     public List<Producto> findByPrecioBetweenOrderByDescripcion(double precioInf, double precioSup) {
         return serviceDao.findByPrecioBetweenOrderByDescripcion(precioInf, precioSup);
@@ -55,5 +57,10 @@ public class ProductoServiceImpl implements ProductoService {
     @Transactional(readOnly = true)
     public List<Producto> findByNombre(String nombre) {
         return serviceDao.findByNombreContainingIgnoreCaseOrderByDescripcion(nombre);
+    }
+
+    @Transactional(readOnly = true)
+    public List<Producto> findByDescripcionContainingIgnoreCase(String textoDescripcion) {
+        return serviceDao.findByDescripcionContainingIgnoreCase(textoDescripcion);
     }
 }
