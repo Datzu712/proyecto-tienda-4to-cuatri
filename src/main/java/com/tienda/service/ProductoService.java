@@ -22,4 +22,7 @@ public interface ProductoService {
     public List<Producto> metodoJPQL(double precioInf, double precioSup);
 
     public List<Producto> metodoNativo(double precioInf, double precioSup);
+    
+    // Nuevo método para búsqueda por nombre
+    public List<Producto> findByNombre(String nombre);
 }

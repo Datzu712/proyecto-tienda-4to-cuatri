@@ -91,4 +91,16 @@ public class PruebasController {
         return "/pruebas/listado2";
     }
 
+    @PostMapping("/queryNombre")
+    public String consultaQueryNombre(
+            @RequestParam("nombre") String nombre,
+            Model model
+    ) {
+        var productos = productoService.findByNombre(nombre);
+        model.addAttribute("productos", productos);
+        model.addAttribute("nombre", nombre);
+        model.addAttribute("totalProductos", productos.size());
+        return "/pruebas/listado2";
+    }
+
 }

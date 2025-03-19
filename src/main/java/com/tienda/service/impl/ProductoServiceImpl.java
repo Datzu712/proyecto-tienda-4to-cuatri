@@ -51,4 +51,9 @@ public class ProductoServiceImpl implements ProductoService {
     public List<Producto> metodoNativo(double precioInf, double precioSup) {
         return serviceDao.metodoNativo(precioInf, precioSup);
     }
+
+    @Transactional(readOnly = true)
+    public List<Producto> findByNombre(String nombre) {
+        return serviceDao.findByNombreContainingIgnoreCaseOrderByDescripcion(nombre);
+    }
 }
